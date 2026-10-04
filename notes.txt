@@ -1,0 +1,61 @@
+# what is react js
+
+--> this is a js library use to make complex frontend
+
+--> how react came into the picture long before when facebook uses
+html,css,js for eg someone has received tthe message and in his message inbox the count of message is 3 and if he receiveed the 4 message the message will not update instantly we need to reload the whole website 
+
+--> so because of this react come into the picture react break the website into chunks what happens because of react when some one has sent the message only that part will reload instead of reloading the whole website
+this make the website smooth
+
+______________import export___________
+
+--> ther are two types of export are there named,default
+
+_____________________real DOM vs actual DOM__________________
+
+ --> in real dom the whole page reload
+
+--> in virtual dom there is no need in just one click the particular section update
+
+_________________________JSX(javascript XML)___________________________
+
+--> this is the combination of HTML+javascript
+
+_______________________________Vite_______________________
+
+--> basically this helps us to make a folder
+
+_______________________________folder______________________________
+
+# esliint.config.js
+
+--> in a esliint.config.js we can make the custom rules
+
+# gitignore
+
+--> in this we add those things which we dont want to store in github
+
+_________________________________github______________________
+
+--> once you start making the project upload it to git hub
+
+--> for that write the command which u will get in github
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
