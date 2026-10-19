@@ -8,7 +8,7 @@ html,css,js for eg someone has received tthe message and in his message inbox th
 --> so because of this react come into the picture react break the website into chunks what happens because of react when some one has sent the message only that part will reload instead of reloading the whole website
 this make the website smooth
 
-______________import export___________
+________________________import export________________
 
 --> ther are two types of export are there named,default
 
@@ -18,9 +18,57 @@ _____________________real DOM vs actual DOM__________________
 
 --> in virtual dom there is no need in just one click the particular section update
 
+____________________________components____________________
+
+--> basically this will reduce the load instead of making 
+
 _________________________JSX(javascript XML)___________________________
 
 --> this is the combination of HTML+javascript
+
+________________________props drilling________________________
+
+--> to pass the data in the card we use props in this by parent we send data to child
+
+--> basically this make our work dammm easyyy in js
+
+--> this is how we pass the data in props
+
+// app.jsx
+import React from 'react'
+import Card from './components/card'
+import User from './components/user'
+
+const App = () => {
+  return(
+    <div>
+      <Card />
+      <User name='dhruv'/>
+    </div>
+  )
+}
+
+export default App
+
+// card.jsx
+
+import React from 'react'
+
+const User = (props) => {
+  return (
+    <div>
+      {props.name}
+    </div>
+  )
+}
+
+________________________propskey____________________________
+
+--> basically we use this to diffrentitate 
+
+--> give key basically it works as a index
+
+--> basically this make s the element unique
 
 _______________________________Vite_______________________
 
@@ -42,12 +90,135 @@ _________________________________github______________________
 
 --> for that write the command which u will get in github
 
+________________________________random____________________
 
+--> type lorem to print 10 random words
 
+________________________css_________________________
 
+--> there are types of css
+--> first is folder base and second is module base
 
+# module base
 
+--> basically in this we make the one folder according to our jsx file and in that css is also there.
+we can access the css like this className={styles.btn} in div
 
+# tailwind css
+
+--> this is a utility first css framework
+--> this is css library
+--> npm install tailwindcss @tailwindcss/vite
+--> change the vite.config.js
+
+import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(),tailwindcss()],
+})
+
+--> in the index.css paste @import "tailwindcss";
+
+__________________________________________________-
+
+# there are two types of websites type are there 
+
+1) feature base
+
+--> making components according to features
+
+2) atomic structure
+
+--> made one thing and use it in many areas measn ek ek chij ko alag se manage karna
+
+______________________________functions________________________
+
+--> ther is one important thing 
+
+ <button onClick={btnclicked()}>change user</button>
+
+if we btnclicked() write in that way then it will call immediately 
+and if we remove the brackets then when we click the button only then it will run
+
+____________________________Hooks_____________________________
+
+--> hooks are:
+
+1) useState - manage state
+
+--> means if any edit we do on a particulare state add something then it becomes its second state
+
+const newNum = { ...num };
+Here, ...num is called the spread operator, not destructuring.
+It copies the properties of num into a new object.
+
+2) useEffect 
+
+--> this is used to manage side states if we use this then we can run another process side by side
+
+3) useRef
+
+--> with the help of useref we can select the DOM element
+
+4) useContext 
+
+--> this manage the global context its just like a using global variable 
+
+5) useReducer
+
+--> this manages the complex logics
+
+6) useMemo and useCallback
+
+--> this is used for optimization
+
+________________________________batch update______________________
+
+______________________two_way_binding_____________________________
+
+--> to manage inputs in form
+
+import React from 'react'
+import { useState } from 'react'
+
+const App = () => {
+
+  const [title,setTitle] = useState('')
+
+  const submitHandler=(e)=>{
+    e.preventDefault()
+    console.log('form submitted')
+  }
+  return (
+    <div>
+      <form onSubmit={(e)=>{
+        submitHandler(e)
+      }}>
+        <input type="text" 
+        placeholder='Enter ur name' 
+        value={title}
+        onChange={(e)=>{
+          setTitle(e.target.value)
+        }}
+        />
+
+        <button>submit</button>
+      </form>
+    </div>
+  )
+}
+export default App
+
+--> this is how we change the value
+
+--> means we have to say to react that change the data for mee
+
+@ splice
+
+--> splice() is used to add, remove, or replace elements in an array. It changes the original array. arr.splice(2(starting index),1(the number of element u want to remove))
 
 
 
